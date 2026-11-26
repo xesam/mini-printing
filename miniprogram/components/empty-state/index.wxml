@@ -1,0 +1,8 @@
+<view class="empty-state">
+    <view class="empty-state__icon"></view>
+    <view class="empty-state__title">{{title}}</view>
+    <view wx:if="{{hint}}" class="empty-state__hint">{{hint}}</view>
+    <view class="empty-state__action">
+        <slot/>
+    </view>
+</view>

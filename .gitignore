@@ -1,0 +1,8 @@
+node_modules
+miniprogram_npm
+project.private.config.json
+.*
+
+# Local-only agent instruction files (AGENTS.md is the single source of truth)
+/CLAUDE.md
+*.local.md

@@ -1,0 +1,86 @@
+.notice-card {
+    background: #fffbe8;
+    border-radius: 24rpx;
+    padding: 24rpx 32rpx;
+    font-size: 26rpx;
+    line-height: 1.6;
+    color: #a07a16;
+}
+
+.help-title {
+    display: flex;
+    align-items: center;
+    padding: 16rpx 8rpx 24rpx;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.help-title::before {
+    content: '';
+    width: 8rpx;
+    height: 32rpx;
+    margin-right: 16rpx;
+    border-radius: 4rpx;
+    background: var(--brand);
+}
+
+.help-p {
+    padding: 0 8rpx 24rpx;
+    font-size: 28rpx;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.brand-guide {
+    padding: 24rpx 32rpx;
+}
+
+.brand-guide + .brand-guide {
+    margin-top: 16rpx;
+}
+
+.brand-guide__header {
+    margin-bottom: 16rpx;
+}
+
+.brand-guide__row {
+    display: flex;
+    align-items: center;
+    padding: 8rpx 0;
+}
+
+.brand-guide__term {
+    font-size: 28rpx;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.brand-guide__arrow {
+    margin: 0 24rpx;
+    color: var(--text-weak);
+    font-size: 28rpx;
+}
+
+.brand-guide__field {
+    font-size: 28rpx;
+    color: var(--brand);
+    font-weight: 500;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+}
+
+.contact-card__label {
+    width: 140rpx;
+    color: var(--text-secondary);
+    font-size: 28rpx;
+}
+
+.contact-card__value {
+    font-size: 28rpx;
+    color: var(--text-primary);
+    font-family: "Menlo", "Consolas", monospace;
+}

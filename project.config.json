@@ -1,0 +1,70 @@
+{
+  "appid": "touristappid",
+  "projectname": "mini-printing",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "libVersion": "2.19.0",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmRelationList": [],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "condition": false,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "账号-列表",
+          "pathName": "pages/account/index/index",
+          "query": "",
+          "launchMode": "default"
+        },
+        {
+          "name": "账号-新增",
+          "pathName": "pages/account/edit/index",
+          "query": "action_type=create",
+          "launchMode": "default"
+        },
+        {
+          "name": "账号-编辑",
+          "pathName": "pages/account/edit/index",
+          "query": "action_type=edit",
+          "launchMode": "default"
+        },
+        {
+          "name": "帮助-首页",
+          "pathName": "pages/help/index/index",
+          "query": "",
+          "launchMode": "default"
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "simulatorPluginLibVersion": {}
+}

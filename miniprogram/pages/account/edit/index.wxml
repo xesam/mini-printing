@@ -1,0 +1,51 @@
+<view class="page-container">
+    <navigation-bar title="{{title}}" back="{{true}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <view class="section">
+            <view class="card form">
+                <picker range="{{viewBrands}}"
+                        range-key="name"
+                        value="{{viewBrandIndex}}"
+                        data-name="brand"
+                        bind:change="onMiniItemChanged">
+                    <view class="form-cell">
+                        <view class="form-cell__label">厂商</view>
+                        <view class="form-cell__value">
+                            <text wx:if="{{viewBrandIndex >= 0}}">{{viewBrands[viewBrandIndex].name}}</text>
+                            <text wx:else class="form-cell__placeholder">请选择厂商</text>
+                            <view class="chevron"></view>
+                        </view>
+                    </view>
+                </picker>
+                <view class="form-cell">
+                    <view class="form-cell__label">AppId</view>
+                    <input class="form-cell__input"
+                           value="{{viewAccount.appid}}"
+                           placeholder="请输入 AppId"
+                           data-name="appid"
+                           bind:input="onMiniItemChanged"/>
+                </view>
+                <view class="form-cell">
+                    <view class="form-cell__label">Secret</view>
+                    <input class="form-cell__input"
+                           password="{{!secretVisible}}"
+                           value="{{viewAccount.secret}}"
+                           placeholder="请输入 Secret"
+                           data-name="secret"
+                           bind:input="onMiniItemChanged"/>
+                    <view class="form-cell__suffix"
+                          catch:tap="onTapToggleSecret">{{secretVisible ? '隐藏' : '显示'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <button class="btn btn--primary btn--block"
+                    loading="{{saving}}"
+                    hover-class="btn--hover"
+                    bind:tap="onTapSave">保存</button>
+        </view>
+    </scroll-view>
+    <safe-area-bottom ext-class="page-bottom">
+        <view class="help-entrance" bind:tap="onTapHelp">查看帮助</view>
+    </safe-area-bottom>
+</view>

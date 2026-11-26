@@ -1,0 +1,66 @@
+<view class="page-container">
+    <navigation-bar title="外卖打印机开放平台" back="{{false}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <view class="section">
+            <view class="card account-card" hover-class="view--hover" bind:tap="onTapChangeAccount">
+                <image class="account-card__icon" src="/assets/account.svg"/>
+                <view class="account-card__body">
+                    <block wx:if="{{viewAccount}}">
+                        <view class="account-card__brand">{{viewAccount.brandName}}</view>
+                        <view class="account-card__appid">{{viewAccount.appid}}</view>
+                    </block>
+                    <block wx:else>
+                        <view class="account-card__brand">未配置开放平台账号</view>
+                        <view class="account-card__appid account-card__appid--muted">配置后可查询和管理设备</view>
+                    </block>
+                </view>
+                <view class="account-card__action">
+                    <text>{{viewAccount ? '切换账号' : '去配置'}}</text>
+                    <view class="chevron account-card__chevron"></view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="search-bar">
+                <view class="search-bar__field">
+                    <view class="search-bar__icon">
+                        <view class="search-bar__icon-circle"></view>
+                        <view class="search-bar__icon-handle"></view>
+                    </view>
+                    <input class="search-bar__input"
+                           placeholder="请输入设备的编号"
+                           confirm-type="search"
+                           value="{{searchRawValue}}"
+                           bind:input="onSearchChanged"
+                           bind:confirm="onTapSearchAction"/>
+                    <view wx:if="{{searchRawValue}}" class="search-bar__clear" catch:tap="onTapClearSearch">×</view>
+                </view>
+                <view class="search-bar__action"
+                      hover-class="view--hover"
+                      bind:tap="onTapSearchAction">{{searching ? '搜索中' : '搜索'}}</view>
+            </view>
+        </view>
+        <view class="section">
+            <view wx:if="{{searching}}" class="card">
+                <view class="skeleton--block"></view>
+                <view class="skeleton--block skeleton--w60"></view>
+            </view>
+            <device-card wx:elif="{{viewDevice}}"
+                         sn="{{viewDevice.sn}}"
+                         brand="{{viewAccount.brand}}"
+                         brandName="{{viewAccount.brandName}}"
+                         online="{{viewDevice.online}}"
+                         hover-class="view--hover"
+                         bind:tap="onTapDevice"/>
+            <view wx:elif="{{searchErrorMsg}}" class="card state-card--fail">
+                <view class="state-card--fail__msg">{{searchErrorMsg}}</view>
+                <view class="state-card--fail__retry" bind:tap="onTapRetrySearch">重试</view>
+            </view>
+            <empty-state wx:elif="{{!viewAccount}}"
+                         title="尚未配置账号"
+                         hint="配置开放平台账号后即可搜索设备">
+                <button class="btn btn--primary" bind:tap="onTapChangeAccount">去配置账号</button>
+            </empty-state>
+        </view>
+    </scroll-view>
+</view>

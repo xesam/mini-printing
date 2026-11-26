@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/help/index",
+    "pages/print/index",
+    "pages/device/detail/index",
+    "pages/frequent-devices/index",
+    "pages/account/index/index",
+    "pages/account/edit/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "外卖打印机开放平台",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1989fa",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/tab-home.png",
+        "selectedIconPath": "assets/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/frequent-devices/index",
+        "text": "常用",
+        "iconPath": "assets/tab-frequent.png",
+        "selectedIconPath": "assets/tab-frequent-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "safe-area-top": "@mini-dev/safe-area-ui/safe-area-top",
+    "safe-area-bottom": "@mini-dev/safe-area-ui/safe-area-bottom",
+    "statusbar-safe-top": "@mini-dev/safe-area-ui/statusbar-safe-top",
+    "navigation-bar": "@mini-dev/safe-area-ui/navigation-bar",
+    "navigation-bar-base": "@mini-dev/safe-area-ui/navigation-bar-base",
+    "brand-tag": "/components/brand-tag/index",
+    "device-card": "/components/device-card/index",
+    "empty-state": "/components/empty-state/index",
+    "stepper": "/components/stepper/index",
+    "segmented": "/components/segmented/index"
+  }
+}

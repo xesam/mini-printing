@@ -1,0 +1,17 @@
+<view class="device-card {{large ? 'device-card--large' : ''}}">
+    <view class="device-card__main">
+        <view class="device-card__sn"><text>{{sn}}</text><text wx:if="{{copyable}}"
+                  class="device-card__copy"
+                  hover-class="device-card__copy--hover"
+                  bind:tap="onTapCopy">复制</text></view>
+        <view class="device-card__meta">
+            <brand-tag brand="{{brand}}" name="{{brandName}}"/>
+            <slot/>
+        </view>
+    </view>
+    <view wx:if="{{showStatus}}"
+          class="device-status {{online ? 'device-status--online' : 'device-status--offline'}}">
+        <view class="device-status__dot"></view>
+        <text class="device-status__text">{{online ? '在线' : '离线'}}</text>
+    </view>
+</view>

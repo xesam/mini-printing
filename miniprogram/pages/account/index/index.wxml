@@ -1,0 +1,41 @@
+<view class="page-container">
+    <navigation-bar title="账号管理" back="{{true}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <view class="section">
+            <empty-state wx:if="{{!accounts.length}}"
+                         title="暂无开放平台账号"
+                         hint="配置飞鹅、芯烨或商鹏账号后即可使用"/>
+        </view>
+        <view wx:for="{{accounts}}"
+              wx:key="_id"
+              class="section">
+            <view class="card account-item {{item._id === currentAccountId ? 'account-item--current' : ''}}"
+                  data-id="{{item._id}}"
+                  bind:tap="onTapAccount">
+                <view class="account-item__header">
+                    <brand-tag brand="{{item.brand}}" name="{{item.brandName}}"/>
+                    <view wx:if="{{item._id === currentAccountId}}" class="account-item__current">当前</view>
+                </view>
+                <view class="account-item__appid">{{item.appid}}</view>
+                <view class="account-item__secret"
+                     catch:tap="onTapToggleSecret"
+                     data-id="{{item._id}}">
+                    <text class="account-item__secret-text">{{visibleSecrets[item._id] ? item.secret : '••••••••••••'}}</text>
+                    <text class="account-item__secret-toggle">{{visibleSecrets[item._id] ? '隐藏' : '显示'}}</text>
+                </view>
+                <view class="account-item__actions">
+                    <view class="account-item__action account-item__action--danger" data-action="delete">删除</view>
+                    <view class="account-item__action" data-action="edit">编辑</view>
+                    <view class="account-item__action account-item__action--primary" data-action="choose">选择</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <safe-area-bottom ext-class="page-bottom">
+        <view class="bottom-bar">
+            <button class="btn btn--primary btn--block"
+                    hover-class="btn--hover"
+                    bind:tap="onTapNew">新增开放平台账号</button>
+        </view>
+    </safe-area-bottom>
+</view>

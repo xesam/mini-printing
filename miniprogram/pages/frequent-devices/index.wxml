@@ -1,0 +1,66 @@
+<view class="page-container">
+    <navigation-bar title="常用设备" back="{{false}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <empty-state wx:if="{{!hasDevices}}"
+                     title="暂无常用设备"
+                     hint="在设备详情页加入常用，或点击右下角按钮手动添加"/>
+        <view wx:else class="section device-list">
+            <view wx:for="{{devices}}"
+                  wx:key="listKey"
+                  class="card device-item">
+                <view class="device-item__main"
+                      hover-class="view--hover"
+                      bind:tap="onTapDevice"
+                      data-brand="{{item.brand}}"
+                      data-device-id="{{item.deviceId}}">
+                    <view class="device-item__header">
+                        <text class="device-item__name">{{item.displayName}}</text>
+                        <brand-tag brand="{{item.brand}}" name="{{item.brandName}}"/>
+                    </view>
+                    <view class="device-item__sn">{{item.deviceId}}</view>
+                    <view wx:if="{{item.typeName}}" class="device-item__sub">{{item.typeName}}</view>
+                    <view wx:if="{{item.remark}}" class="device-item__sub device-item__sub--muted">{{item.remark}}</view>
+                </view>
+                <view class="device-item__more"
+                      hover-class="view--hover"
+                      catch:tap="onTapEdit"
+                      data-brand="{{item.brand}}"
+                      data-device-id="{{item.deviceId}}"
+                      data-name="{{item.name}}"
+                      data-remark="{{item.remark}}"
+                      data-type="{{item.type}}">
+                    <view class="more-icon">
+                        <view class="more-icon__dot"></view>
+                        <view class="more-icon__dot"></view>
+                        <view class="more-icon__dot"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="fab-button" hover-class="view--hover" bind:tap="onTapAdd">
+        <text class="fab-icon">+</text>
+    </view>
+    <view wx:if="{{addPanelVisible}}" class="panel-mask" bind:tap="closeAddPanel"></view>
+    <view wx:if="{{addPanelVisible}}" class="panel">
+        <view class="panel__header">
+            <view class="panel__title">添加常用设备</view>
+            <view class="panel__close" hover-class="view--hover" bind:tap="closeAddPanel">×</view>
+        </view>
+        <view class="panel__body">
+            <view class="panel__label">设备厂商</view>
+            <segmented options="{{brandOptions}}" value="{{addForm.brand}}" bind:change="onAddBrandChanged"/>
+            <view class="panel__label">设备编号</view>
+            <input class="panel__input"
+                   placeholder="请输入设备编号"
+                   value="{{addForm.deviceId}}"
+                   bind:input="onAddSnInput"/>
+            <view class="panel__label">设备类型</view>
+            <segmented options="{{deviceTypes}}" value="{{addForm.type}}" bind:change="onAddTypeChanged"/>
+            <button class="btn btn--primary btn--block panel__submit"
+                    hover-class="btn--hover"
+                    bind:tap="onTapAddConfirm">添加设备</button>
+        </view>
+        <safe-area-bottom></safe-area-bottom>
+    </view>
+</view>

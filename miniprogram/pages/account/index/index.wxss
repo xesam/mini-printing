@@ -1,0 +1,74 @@
+.account-item--current {
+    border: 2rpx solid var(--brand);
+}
+
+.account-item__header {
+    display: flex;
+    align-items: center;
+}
+
+.account-item__current {
+    margin-left: 16rpx;
+    padding: 4rpx 16rpx;
+    border-radius: 8rpx;
+    font-size: 22rpx;
+    color: var(--brand);
+    background: var(--brand-plain, #e8f3ff);
+}
+
+.account-item__appid {
+    margin-top: 16rpx;
+    font-size: 30rpx;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: "Menlo", "Consolas", monospace;
+    word-break: break-all;
+}
+
+.account-item__secret {
+    display: flex;
+    align-items: center;
+    margin-top: 12rpx;
+}
+
+.account-item__secret-text {
+    flex: 1;
+    min-width: 0;
+    font-size: 26rpx;
+    color: var(--text-secondary);
+    font-family: "Menlo", "Consolas", monospace;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.account-item__secret-toggle {
+    margin-left: 16rpx;
+    flex-shrink: 0;
+    padding: 8rpx 16rpx;
+    font-size: 24rpx;
+    color: var(--brand);
+}
+
+.account-item__actions {
+    display: flex;
+    align-items: center;
+    margin-top: 24rpx;
+    padding-top: 8rpx;
+    border-top: 1rpx solid var(--border-color);
+}
+
+.account-item__action {
+    flex: 1;
+    text-align: center;
+    padding: 16rpx 0;
+    font-size: 28rpx;
+    color: var(--text-secondary);
+}
+
+.account-item__action--primary {
+    color: var(--brand);
+}
+
+.account-item__action--danger {
+    color: var(--danger);
+}

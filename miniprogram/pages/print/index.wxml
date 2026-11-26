@@ -1,0 +1,52 @@
+<view class="page-container">
+    <navigation-bar title="打印" back="{{true}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <view class="section">
+            <view class="ctrl-title">当前设备</view>
+            <device-card wx:if="{{rawSn}}"
+                         sn="{{rawSn}}"
+                         brand="{{viewAccount.brand}}"
+                         brandName="{{viewAccount.brandName}}"
+                         show-status="{{false}}"/>
+            <view wx:else class="card card--tip">未指定设备编号</view>
+        </view>
+        <view class="section">
+            <view class="ctrl-title">设备类型</view>
+            <view class="card print-panel">
+                <segmented options="{{deviceTypes}}" value="{{viewDeviceType.id}}" bind:change="onDeviceTypeChanged"/>
+            </view>
+        </view>
+        <view class="section">
+            <view class="ctrl-title">打印内容</view>
+            <view class="card content-card">
+                <textarea class="content-card__textarea"
+                          placeholder="请输入打印内容"
+                          maxlength="-1"
+                          auto-height
+                          value="{{viewInputContent}}"
+                          bind:input="onContentChanged"/>
+                <view class="content-card__footer">
+                    <text class="content-card__count">{{viewInputContent.length}} 字</text>
+                    <view class="content-card__tools">
+                        <text class="link-action" data-action="clear" bind:tap="onTapCtrlAction">清空</text>
+                        <text class="link-action" data-action="copy" bind:tap="onTapCtrlAction">复制</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="ctrl-title">打印次数</view>
+            <view class="card print-panel">
+                <stepper value="{{viewInputCopies}}" min="{{1}}" max="{{5}}" bind:change="onCopiesChanged"/>
+            </view>
+        </view>
+    </scroll-view>
+    <safe-area-bottom ext-class="page-bottom">
+        <view class="bottom-bar">
+            <button class="btn btn--primary btn--block"
+                    loading="{{printing}}"
+                    hover-class="btn--hover"
+                    bind:tap="onTapSend">打印</button>
+        </view>
+    </safe-area-bottom>
+</view>

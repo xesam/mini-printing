@@ -1,0 +1,37 @@
+{
+  "name": "mini-printing",
+  "version": "0.0.1",
+  "description": "外卖打印机开放平台聚合管理",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xesam/mini-printing.git"
+  },
+  "dependencies": {
+    "@mini-dev/event": "0.1.0",
+    "@mini-dev/event-hook": "0.1.0",
+    "@mini-dev/hook": "0.5.3",
+    "@mini-dev/request-wx": "0.4.1",
+    "@mini-dev/router": "0.3.1",
+    "@mini-dev/safe-area": "0.0.1",
+    "@mini-dev/safe-area-ui": "0.0.1",
+    "@mini-dev/storage-wx": "0.0.2",
+    "@xesam/cloud-core": "0.1.0",
+    "@xesam/cloud-vendor-feie": "0.1.0",
+    "@xesam/cloud-vendor-spyun": "0.1.0",
+    "@xesam/cloud-vendor-xpyun": "0.1.0",
+    "crypto-js": "4.2.0"
+  },
+  "keywords": [
+    "printer",
+    "云打印",
+    "飞鹅",
+    "商鹏",
+    "芯烨"
+  ],
+  "author": "xesam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xesam/mini-printing/issues"
+  },
+  "homepage": "https://github.com/xesam/mini-printing#readme"
+}

@@ -1,0 +1,76 @@
+.device-card {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 24rpx;
+    padding: 32rpx;
+}
+
+.device-card__main {
+    flex: 1;
+    min-width: 0;
+}
+
+.device-card__sn {
+    flex: 1;
+    min-width: 0;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--text-primary, #323233);
+    font-family: "Menlo", "Consolas", monospace;
+    word-break: break-all;
+}
+
+.device-card__copy {
+    flex-shrink: 0;
+    margin: 4rpx 0 0 16rpx;
+    padding: 6rpx 20rpx;
+    border-radius: 999rpx;
+    font-size: 24rpx;
+    line-height: 1.5;
+    color: var(--brand, #1989fa);
+    background: #f2f3f5;
+}
+
+.device-card__copy--hover {
+    background: #e8e9eb;
+}
+
+.device-card--large .device-card__sn {
+    font-size: 40rpx;
+}
+
+.device-card__meta {
+    margin-top: 16rpx;
+    display: flex;
+    align-items: center;
+}
+
+.device-status {
+    display: flex;
+    align-items: center;
+    margin-left: 24rpx;
+    flex-shrink: 0;
+}
+
+.device-status__dot {
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 50%;
+    margin-right: 8rpx;
+    background: #c8c9cc;
+}
+
+.device-status__text {
+    font-size: 26rpx;
+    color: var(--text-secondary, #969799);
+}
+
+.device-status--online .device-status__dot {
+    background: #07c160;
+    box-shadow: 0 0 0 6rpx rgba(7, 193, 96, 0.12);
+}
+
+.device-status--online .device-status__text {
+    color: #07c160;
+}

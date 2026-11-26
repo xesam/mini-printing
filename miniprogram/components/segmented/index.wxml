@@ -1,0 +1,8 @@
+<view class="segmented">
+    <view wx:for="{{options}}"
+          wx:key="id"
+          class="segmented__item {{value === item.id ? 'segmented__item--active' : ''}}"
+          data-id="{{item.id}}"
+          hover-class="segmented__item--hover"
+          bind:tap="onSelect">{{item.name}}</view>
+</view>

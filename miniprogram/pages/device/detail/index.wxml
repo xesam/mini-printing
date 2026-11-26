@@ -1,0 +1,40 @@
+<view class="page-container">
+    <navigation-bar title="设备详情" back="{{true}}" color="black" background="#fff"></navigation-bar>
+    <scroll-view class="page-scrollarea" scroll-y type="list">
+        <block wx:if="{{loading}}">
+            <view class="section">
+                <view class="card">
+                    <view class="skeleton--block"></view>
+                    <view class="skeleton--block skeleton--w60"></view>
+                    <view class="skeleton--block skeleton--w40"></view>
+                </view>
+            </view>
+        </block>
+        <block wx:elif="{{loadError}}">
+            <view class="section">
+                <empty-state title="加载失败" hint="{{loadError}}">
+                    <button class="btn btn--primary" bind:tap="onTapRetry">重新加载</button>
+                </empty-state>
+            </view>
+        </block>
+        <block wx:elif="{{viewDevice}}">
+            <view class="section">
+                <device-card large
+                             copyable
+                             sn="{{viewDevice.sn}}"
+                             brand="{{viewAccount.brand}}"
+                             brandName="{{viewAccount.brandName}}"
+                             online="{{viewDevice.online}}"/>
+            </view>
+            <view class="section">
+                <button class="btn btn--primary btn--block"
+                        hover-class="btn--hover"
+                        bind:tap="onTapPrint">去打印</button>
+                <button wx:if="{{!isFrequent}}"
+                        class="btn btn--secondary btn--block detail-action-gap"
+                        hover-class="btn--hover"
+                        bind:tap="onTapAddFrequent">加入常用</button>
+            </view>
+        </block>
+    </scroll-view>
+</view>

@@ -1,0 +1,31 @@
+.stepper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepper__btn {
+    width: 72rpx;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 36rpx;
+    background: #f7f8fa;
+    color: var(--text-primary, #323233);
+    font-size: 44rpx;
+    line-height: 1;
+}
+
+.stepper__btn--hover {
+    background: #ebedf0;
+}
+
+.stepper__value {
+    min-width: 120rpx;
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: 600;
+    color: var(--text-primary, #323233);
+}

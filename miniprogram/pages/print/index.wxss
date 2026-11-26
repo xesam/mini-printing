@@ -1,0 +1,40 @@
+.print-panel {
+    padding: 16rpx;
+}
+
+.card--tip {
+    color: var(--text-secondary);
+    font-size: 28rpx;
+    text-align: center;
+}
+
+.content-card {
+    padding: 0;
+}
+
+.content-card__textarea {
+    width: 100%;
+    min-height: 240rpx;
+    padding: 24rpx 32rpx;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    line-height: 1.6;
+}
+
+.content-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8rpx 16rpx 8rpx 32rpx;
+    border-top: 1rpx solid var(--border-color);
+}
+
+.content-card__count {
+    font-size: 24rpx;
+    color: var(--text-weak);
+}
+
+.content-card__tools {
+    display: flex;
+    align-items: center;
+}

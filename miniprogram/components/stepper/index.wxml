@@ -1,0 +1,5 @@
+<view class="stepper">
+    <view class="stepper__btn" hover-class="stepper__btn--hover" bind:tap="onTapDecrease">-</view>
+    <view class="stepper__value">{{value}}</view>
+    <view class="stepper__btn" hover-class="stepper__btn--hover" bind:tap="onTapIncrease">+</view>
+</view>

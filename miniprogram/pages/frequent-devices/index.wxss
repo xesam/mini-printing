@@ -1,0 +1,172 @@
+.device-list {
+    padding-bottom: 160rpx;
+}
+
+.device-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16rpx;
+}
+
+.device-item:last-child {
+    margin-bottom: 0;
+}
+
+.device-item__main {
+    flex: 1;
+    min-width: 0;
+}
+
+.device-item__header {
+    display: flex;
+    align-items: center;
+}
+
+.device-item__name {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-right: 16rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.device-item__sn {
+    margin-top: 12rpx;
+    font-size: 26rpx;
+    color: var(--text-secondary);
+    font-family: "Menlo", "Consolas", monospace;
+    word-break: break-all;
+}
+
+.device-item__sub {
+    margin-top: 8rpx;
+    font-size: 24rpx;
+    color: var(--text-secondary);
+}
+
+.device-item__sub--muted {
+    color: var(--text-weak);
+}
+
+.device-item__more {
+    flex-shrink: 0;
+    width: 72rpx;
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -8rpx -16rpx 0 16rpx;
+}
+
+.more-icon {
+    display: flex;
+    align-items: center;
+}
+
+.more-icon__dot {
+    width: 8rpx;
+    height: 8rpx;
+    border-radius: 50%;
+    background: var(--text-weak);
+}
+
+.more-icon__dot + .more-icon__dot {
+    margin-left: 8rpx;
+}
+
+.fab-button {
+    position: fixed;
+    right: 32rpx;
+    bottom: calc(32rpx + env(safe-area-inset-bottom));
+    width: 112rpx;
+    height: 112rpx;
+    background: var(--brand);
+    border-radius: 56rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8rpx 16rpx rgba(25, 137, 250, 0.3);
+    z-index: 100;
+}
+
+.fab-icon {
+    font-size: 64rpx;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.panel-mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+.panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    border-radius: 32rpx 32rpx 0 0;
+    padding: 32rpx 32rpx 16rpx;
+    box-sizing: border-box;
+    z-index: 201;
+    animation: panel-in 0.24s ease-out;
+}
+
+@keyframes panel-in {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.panel__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.panel__title {
+    font-size: 32rpx;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.panel__close {
+    padding: 8rpx 8rpx 8rpx 24rpx;
+    font-size: 40rpx;
+    color: var(--text-weak);
+    line-height: 1;
+}
+
+.panel__body {
+    margin-top: 24rpx;
+}
+
+.panel__label {
+    margin: 24rpx 8rpx 16rpx;
+    font-size: 26rpx;
+    color: var(--text-secondary);
+}
+
+.panel__input {
+    height: 80rpx;
+    padding: 0 24rpx;
+    background: #f7f8fa;
+    border-radius: 16rpx;
+    font-size: 28rpx;
+    box-sizing: border-box;
+}
+
+.panel__submit {
+    margin-top: 48rpx;
+}

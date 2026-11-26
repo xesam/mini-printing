@@ -1,0 +1,21 @@
+.brand-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4rpx 16rpx;
+    border-radius: 8rpx;
+    font-size: 22rpx;
+    color: #ffffff;
+    background: #969799;
+}
+
+.brand-tag--FEIE {
+    background: #1989fa;
+}
+
+.brand-tag--XPYUN {
+    background: #ff976a;
+}
+
+.brand-tag--SPYUN {
+    background: #7232dd;
+}
